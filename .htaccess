@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /Arafat/
+
+# ---------- Pretty URLs ----------
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^services/?$ services.php [L]
+RewriteRule ^projects/?$ projects.php [L]
+RewriteRule ^project/([a-zA-Z0-9-]+)/?$ project-details.php?slug=$1 [L,QSA]
+RewriteRule ^blog/?$ blog.php [L]
+RewriteRule ^blog/([a-zA-Z0-9-]+)/?$ blog-post.php?slug=$1 [L,QSA]
+RewriteRule ^contact/?$ contact.php [L]
+RewriteRule ^tools/?$ tools/index.php [L]
+RewriteRule ^tools/([a-zA-Z0-9-]+)/?$ tools/$1.php [L,QSA]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# ---------- Security: block direct access to internal folders ----------
+RewriteRule ^(includes|database)/ - [F,L]
+
+<FilesMatch "\.(sql|md)$">
+  Require all denied
+</FilesMatch>
+
+Options -Indexes

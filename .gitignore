@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+*.log
+_preview_*.php
+_test_*.html
