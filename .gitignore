@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 _preview_*.php
 _test_*.html
+includes/config.php
